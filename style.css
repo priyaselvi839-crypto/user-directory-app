@@ -14,3 +14,10 @@ body {
   padding: 10px;
   border-radius: 6px;
 }
+button {
+  background-color: blue;
+  color: white;
+}
+.user-card:hover {
+  transform: scale(1.05);
+}
