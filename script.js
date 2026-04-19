@@ -20,7 +20,6 @@ async function fetchUsers() {
     statusText.innerText = "Failed to load users";
   }
 }
-
 function displayUsers(users) {
   users.forEach(user => {
     const div = document.createElement("div");
@@ -28,8 +27,14 @@ function displayUsers(users) {
     div.innerHTML = `
       <h4>${user.name}</h4>
       <p>${user.email}</p>
-      <p>${user.address.city}</p>
+      <p>${user.address?.city||"No city"}</p>
     `;
+    const button=document.createElement("button");
+    button.textContent="View";
+    button.addEventListener("click",()=>{
+      alert(user.name +" clicked!");
+    });
+    div.appendChild(button);
     userContainer.appendChild(div);
   });
 }
